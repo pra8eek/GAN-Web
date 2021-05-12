@@ -1,0 +1,40 @@
+
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+    
+      <title>Title</title>
+      <meta name="description" content="The HTML5 Herald">
+      <meta name="author" content="SitePoint">
+    
+      <link rel="stylesheet" href="css/a.css">
+    
+  </head>
+    
+  <body>
+      
+        <div id="bar_before">
+            <ul>
+              <!--Image thumbnails added using JS-->
+            </ul>
+          </div>
+
+          <main onscroll="refreshBars();">
+            <ul>
+              <% var i = 0; %>
+              <% files.forEach( file => { %>
+                <li>
+                  <img id="img_<%= i++ %>" src=<%= folder %>/<%= file %>  >
+                </li>
+              <% }) %>
+            </ul>
+          </main>
+          
+          <div id="bar_after">
+            <ul>
+              <!--Image thumbnails added using JS-->
+            </ul>
+      <script src="js/a.js"/>
+  </body>
+</html>
+    
