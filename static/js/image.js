@@ -1,4 +1,4 @@
-function whereIs(element) {
+unction whereIs(element) {
     const rect = element.getBoundingClientRect();
     if (
       rect.top >= 0 &&
@@ -55,4 +55,3 @@ function whereIs(element) {
         where_is == "a" ? "" : "hidden"; 
     }
   }
-  

@@ -5,15 +5,16 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
 
+var prefix = __dirname + "/static/";
 var folder = "Image-0";
 
 app.get("/", function(req, res){
-	res.send("<h1> Home Page </h1>");
+	res.render("home.ejs");
 });
 
 app.get("/image", function(req, res){
-	files = fs.readdirSync(__dirname + "/static/" + folder)
-	res.render("index.ejs", {files: files, folder: folder});
+	files = fs.readdirSync(prefix + folder);
+	res.render("image.ejs", {files: files, folder: folder});
 });
 
 app.listen(3000, function(){
