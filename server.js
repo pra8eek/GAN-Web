@@ -6,15 +6,18 @@ app.set('view engine', 'ejs');
 app.use(express.static('static'));
 
 var prefix = __dirname + "/static/";
-var folder = "Image-0";
+var dataset = fs.readdirSync(prefix + "dataset/");
 
 app.get("/", function(req, res){
-	res.render("home.ejs");
+	const shuffled = dataset.sort(() => 0.5 - Math.random());
+	let miniDataset = shuffled.slice(0, 10);
+	res.render("home.ejs", {miniDataset: miniDataset});
 });
 
 app.get("/image", function(req, res){
-	files = fs.readdirSync(prefix + folder);
-	res.render("image.ejs", {files: files, folder: folder});
+	var folder = "Image-0/";
+	var filesCount = fs.readdirSync(prefix + folder).length;
+	res.render("image.ejs", {filesCount: filesCount, folder: folder});
 });
 
 app.listen(3000, function(){

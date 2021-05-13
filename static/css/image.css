@@ -20,9 +20,14 @@ body {
     list-style-type: none; 
   }
   
+  main li{
+    margin-bottom:100px;
+    margin-top: 100px;
+  }
+
   main img {
     display: block;
-    width: 60vmin;
+    width: 40vmin;
     margin: auto; 
     margin-bottom: 10vmin;
     margin-top: 10vmin;

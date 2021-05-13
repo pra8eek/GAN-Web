@@ -1,4 +1,4 @@
-unction whereIs(element) {
+function whereIs(element) {
     const rect = element.getBoundingClientRect();
     if (
       rect.top >= 0 &&
