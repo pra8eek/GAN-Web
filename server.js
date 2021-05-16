@@ -7,12 +7,16 @@ app.use(express.static('static'));
 
 var prefix = __dirname + "/static/";
 var dataset = fs.readdirSync(prefix + "dataset/");
-
+var output = fs.readdirSync(prefix + "output/");
 app.get("/", function(req, res){
 	const shuffled = dataset.sort(() => 0.5 - Math.random());
+	const shuffledAnother = output.sort(() => 0.5 - Math.random());
+	let miniOutput = shuffledAnother.slice(0,10);
 	let miniDataset = shuffled.slice(0, 10);
-	res.render("home.ejs", {miniDataset: miniDataset});
+	res.render("home.ejs", {miniDataset: miniDataset,
+	miniOutput: miniOutput});
 });
+
 
 app.get("/image", function(req, res){
 	var folder = "Image-0/";
