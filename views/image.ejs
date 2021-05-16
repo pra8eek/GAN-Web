@@ -15,10 +15,10 @@
 
           <main onscroll="refreshBars();">
             <ul>
-              <% for(var i = 0; i < filesCount; i++) {%>
+              <% for(var i = 1; i < filesCount; i++) {%>
                 <li>
                   <img id="img_<%= i %>" src=<%= folder %>Epoch-<%= i %>.png  >
-                  Epoch-<%= i+1 %>
+                  Epoch-<%= i %>
                 </li>
               <% } %>
             </ul>

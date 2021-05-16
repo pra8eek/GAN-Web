@@ -16,9 +16,9 @@
   <figure>
     <% for (var i = 0; i < 2; i++) {%>
     <% for (var j = 0; j < 5; j++) { %>
-      <a class="immg" href="#">
-              <img src="dataset/<%= miniDataset[i*5+j] %>">
-            </a>
+      <a class="img" href="#">
+        <img class="landscape" src="dataset/<%= miniDataset[i*5+j] %>">
+      </a>
             <% } %>
             <% } %>
 
@@ -45,8 +45,9 @@
     <figure>
       <% for (var i = 0; i < 2; i++) {%>
       <% for (var j = 0; j < 5; j++) { %>
-        <a href="#">
+        <a href="/image?name=<%= miniOutput[i*5+j] %>">
                 <img src="output/<%= miniOutput[i*5+j] %>">
+                <%= miniOutput[i*5+j] %>
               </a>
               <% } %>
               <% } %>

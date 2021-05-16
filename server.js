@@ -8,6 +8,7 @@ app.use(express.static('static'));
 var prefix = __dirname + "/static/";
 var dataset = fs.readdirSync(prefix + "dataset/");
 var output = fs.readdirSync(prefix + "output/");
+
 app.get("/", function(req, res){
 	const shuffled = dataset.sort(() => 0.5 - Math.random());
 	const shuffledAnother = output.sort(() => 0.5 - Math.random());
@@ -19,7 +20,8 @@ app.get("/", function(req, res){
 
 
 app.get("/image", function(req, res){
-	var folder = "Image-0/";
+	var name = req.query.name;
+	var folder = "Image128/Image-" + name.slice(0, -4) + "/";
 	var filesCount = fs.readdirSync(prefix + folder).length;
 	res.render("image.ejs", {filesCount: filesCount, folder: folder});
 });
