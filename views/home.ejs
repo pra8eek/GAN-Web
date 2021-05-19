@@ -5,7 +5,7 @@
       	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
         <link rel="stylesheet" href="css/home.css">
   </head>
-    <h1>This Place<sup>TM</sup> does not exist!!</h1>
+    <h1>This Place does not exist!!</h1>
     <p>
       Not only because the image clarity is poor, but mainly because it was artificially synthesised using Generative Adverserial Networks
     </p>
@@ -50,6 +50,7 @@
               </a>
               <% } %>
               <% } %>
+              
   
               <a class="rfresh" onClick="window.location.reload()">
                 <span></span>
@@ -58,6 +59,13 @@
                 <span></span>
                 Reload to see more images generated.
             </a>
+            <a class="rfresh" href="/images">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Click to see all images generated.
+          </a>
       </figure>
       <br/>
       <br/>
@@ -204,13 +212,14 @@
     </div>
     <div class="content">
         <div>
-          <h4 style="color: white;font-size: medium; text-align: center; font-weight: bold;">©Made by Prateek Bharadwaj(17123), Mahak kapoor(17117), Deepesh Manwani(17110)</h4>
+          <h2 style="color: white;font-size: 1.25rem ; text-align: center; font-weight: bold;">©Made by Prateek Bharadwaj(17123), Mahak kapoor(17117), Deepesh Manwani(17110)</h4>
         </div>
         <div><a class="image" href="#"  style="background-image: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg&quot;)"></a>
             <!-- <p>©2019 Not Really</p> -->
         </div>
     </div>
-</div><svg style="position:fixed; top:100vh">
+</div>
+<svg style="position:fixed; top:100vh">
     <defs>
         <filter id="blob">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>

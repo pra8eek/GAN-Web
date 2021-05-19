@@ -8,14 +8,18 @@ app.use(express.static('static'));
 var prefix = __dirname + "/static/";
 var dataset = fs.readdirSync(prefix + "dataset/");
 var output = fs.readdirSync(prefix + "output/");
+var animation = fs.readdirSync(prefix + "animation");
 
 app.get("/", function(req, res){
 	const shuffled = dataset.sort(() => 0.5 - Math.random());
 	const shuffledAnother = output.sort(() => 0.5 - Math.random());
-	let miniOutput = shuffledAnother.slice(0,10);
+	const shuffledAnotherOne = animation.sort(() => 0.5 - Math.random());
 	let miniDataset = shuffled.slice(0, 10);
+	let miniOutput = shuffledAnother.slice(0,10);
+	let miniAnimation = shuffledAnotherOne.slice(0, 10);
 	res.render("home.ejs", {miniDataset: miniDataset,
-	miniOutput: miniOutput});
+	miniOutput: miniOutput,
+	miniAnimation: miniAnimation});
 });
 
 
@@ -24,6 +28,12 @@ app.get("/image", function(req, res){
 	var folder = "Image128/Image-" + name.slice(0, -4) + "/";
 	var filesCount = fs.readdirSync(prefix + folder).length;
 	res.render("image.ejs", {filesCount: filesCount, folder: folder});
+});
+
+app.get("/images", function(req, res) {
+	// const shuffledAnother = output.sort(() => 0.5 - Math.random());
+	// let miniOutput = shuffledAnother.slice(0,10);
+	res.render("images.ejs", {output: output})
 });
 
 app.listen(3000, function(){
