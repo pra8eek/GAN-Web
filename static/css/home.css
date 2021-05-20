@@ -354,4 +354,14 @@ h1::before {
       bottom: var(--distance, 10rem);
    }
  }
-  
+  .anm{
+    display: none;
+    z-index: 10;
+
+  }
+  .crd:hover > .anm{
+    display: unset;
+  }
+ .crd:hover > .op{
+    display: none;
+  }

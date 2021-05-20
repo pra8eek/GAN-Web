@@ -46,7 +46,10 @@
       <% for (var i = 0; i < 2; i++) {%>
       <% for (var j = 0; j < 5; j++) { %>
         <a href="/image?name=<%= miniOutput[i*5+j] %>">
-                <img src="output/<%= miniOutput[i*5+j] %>">
+              <div class="crd">
+                <img class="op" src="output/<%= miniOutput[i*5+j] %>">
+                <img class="anm" src="animation/<%=miniAnimation[i*5+j]%>">
+              </div>
               </a>
               <% } %>
               <% } %>
